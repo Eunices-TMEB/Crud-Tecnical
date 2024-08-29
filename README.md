@@ -1,27 +1,22 @@
 # CRUDSERHAFEN
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+Para poder revisar correctamente el proyecto se debe tener Angular, para ello debe considerar tener instalado Node.Js , Git para clonar y tener acceso al CMD de terminal.
 
-## Development server
+npm install -g @angular/cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Con esta intalacion recibira todos los modulos necesarios de Node mas Angular 
 
-## Code scaffolding
+Para el Clone del proyecto con Git ya instalado se utilizara el GIT BASH , una consola de Git donde se utilizara el comando 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Git clone https://github.com/Eunices-TMEB/Crud-Tecnical.git 
 
-## Build
+Al obtener el archivo , se debe ir a la rama Master donde se encuentra el programa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Abrir el terminal integrado de VSC y escribir el comando 
 
-## Running unit tests
+Ng Serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para compilar el proyecto.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
