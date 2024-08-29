@@ -1,0 +1,120 @@
+$primary-color: #660e60;
+$secondary-color: #893f71;
+$danger-color: #ac6f8267;
+$light-gray: #cfa093;
+$dark-gray: #f3d0a4;
+$font-stack: 'Roboto', sans-serif;
+
+.pet-form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out forwards;
+
+  h3 {
+    color: $primary-color;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .form-pet {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input, select {
+      padding: 10px;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    select {
+      background-color: white;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      padding-right: 30px; // Space for the dropdown arrow
+      background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+
+    .btn-add-pet {
+      background-color: $secondary-color;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+
+      &:disabled {
+        background-color: lighten($secondary-color, 30%);
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+label {
+  font-family: Arial, sans-serif;
+  font-size: 10px; /* Tamaño de fuente reducido a 10px */
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+  text-transform: uppercase; /* Opción para texto en mayúsculas (opcional) */
+}
+
+input,
+select,
+textarea {
+  margin-bottom: 5px;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Asegura que los labels e inputs estén en columna */
+  align-items: flex-start; /* Alinea los elementos al inicio */
+  margin-bottom: 20px; /* Espacio entre el formulario y otros elementos */
+}
+
+/* Estilo para los labels con campos obligatorios */
+label[for]:before {
+  content: "* "; /* Asterisco rojo al principio */
+  color: red;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

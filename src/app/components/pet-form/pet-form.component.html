@@ -1,0 +1,35 @@
+<div class="pet-form-container">
+  <h3>Agregar Mascota</h3>
+  <form (ngSubmit)="onSubmit()" #petForm="ngForm" class="form-pet">
+    
+    <label for="name">Nombre de la Mascota</label>
+    <input id="name" name="name" [(ngModel)]="pet.name" placeholder="Nombre de la Mascota" required>
+    <div *ngIf="petForm.submitted && !pet.name">
+      El nombre de la mascota es obligatorio.
+    </div>
+    
+    <label for="age">Edad</label>
+    <input id="age" name="age" type="number" [(ngModel)]="pet.age" placeholder="Edad" required>
+    <div *ngIf="petForm.submitted && !pet.age">
+      La edad de la mascota es obligatoria.
+    </div>
+    
+    <label for="gender">Género</label>
+    <select id="gender" name="gender" [(ngModel)]="pet.gender" required>
+      <option value="">Seleccione el género</option>
+      <option value="Macho">Macho</option>
+      <option value="Hembra">Hembra</option>
+    </select>
+    <div *ngIf="petForm.submitted && !pet.gender">
+      El género de la mascota es obligatorio.
+    </div>
+    
+    <label for="breed">Raza</label>
+    <input id="breed" name="breed" [(ngModel)]="pet.breed" placeholder="Raza" required>
+    <div *ngIf="petForm.submitted && !pet.breed">
+      La raza de la mascota es obligatoria.
+    </div>
+
+    <button type="submit" [disabled]="!petForm.valid" class="btn-add-pet">Agregar Mascota</button>
+  </form>
+</div>

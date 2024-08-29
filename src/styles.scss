@@ -1,0 +1,15 @@
+$primary-color: #660e60;
+$secondary-color: #893f71;
+$danger-color: #ac6f82;
+$light-gray: #cfa09373;
+$dark-gray: #f3d0a4;
+$font-stack: 'Roboto', sans-serif;
+
+body {
+    font-family: $font-stack;
+    background-color: $light-gray;
+  }
+
+
+
+  // Añadir animaciones al SCSS

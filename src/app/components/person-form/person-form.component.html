@@ -1,0 +1,28 @@
+<div class="register-container">
+  <h2>{{ person.id ? 'Actualización de Registro' : 'Registrar Persona' }}</h2>
+  <p>Recuerda ingresar datos válidos para el {{ person.id ? 'actualización' : 'registro' }}</p>
+  <form (ngSubmit)="onSubmit()">
+    <label for="firstName">Nombre</label>
+    <input name="firstName" [(ngModel)]="person.firstName" (ngModelChange)="onFormChange()" placeholder="Nombre" required>
+    
+    <label for="lastName">Apellido</label>
+    <input name="lastName" [(ngModel)]="person.lastName" (ngModelChange)="onFormChange()" placeholder="Apellido" required>
+
+    <label for="rut">RUT</label>
+    <input name="rut" [(ngModel)]="person.rut" (ngModelChange)="onFormChange()" placeholder="RUT" required>
+
+    <label for="phone">Teléfono</label>
+    <input name="phone" [(ngModel)]="person.phone" (ngModelChange)="onFormChange()" placeholder="Teléfono" required>
+
+    <label for="email">Correo</label>
+    <input name="email" [(ngModel)]="person.email" (ngModelChange)="onFormChange()" placeholder="Correo" required>
+
+    <!-- Mostrar mensaje de error si el correo electrónico no es válido -->
+    <div *ngIf="emailError" class="error-message">
+      {{ emailError }}
+    </div>
+
+    <!-- Deshabilitar el botón de envío si el formulario no es válido -->
+    <button type="submit" [disabled]="!isFormValid">{{ isEditing ? 'Actualizar Persona' : 'Registrar Persona' }}</button>
+  </form>
+</div>

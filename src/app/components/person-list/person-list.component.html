@@ -1,0 +1,44 @@
+<div class="people-list-container">
+  <button class="btn-add" (click)="toggleForm()">
+    {{ showForm ? (currentPerson && currentPerson.id ? "Actualizar Persona" : "Registrar Persona") : "Registrar Persona" }}
+  </button>
+
+  <app-person-form 
+    *ngIf="showForm && currentPerson" 
+    [person]="currentPerson" 
+    (personAdded)="addPerson($event)"
+    (personUpdated)="updatePerson($event)">
+  </app-person-form>
+
+  <ul class="people-list">
+    <li *ngFor="let person of people; let i = index" class="person-item">
+      <div class="person-details">
+        <div class="person-info">
+          {{ person.firstName }} {{ person.lastName }} ({{ person.rut }}) - 
+          {{ person.phone }} - {{ person.email }}
+        </div>
+        <div class="btn-group">
+          <button class="btn-edit" (click)="editPerson(i)">
+            <i class="material-icons">edit</i>
+          </button>
+          <button class="btn-delete" (click)="deletePerson(person.id)">
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
+      </div>
+      <ul *ngIf="person.showPetsForm" class="pet-list">
+        <li *ngFor="let pet of person.pets" class="pet-item">
+          Mascota: {{ pet.name }} - {{ pet.age }} años - {{ pet.gender }} - Raza: {{ pet.breed }}
+        </li>
+      </ul>
+      <button class="btn-add-pet" (click)="togglePetList(i)">
+        {{ person.showPetsForm ? "Ocultar Formulario Mascotas" : "Agregar Mascota" }}
+      </button>
+      <app-pet-form 
+        *ngIf="person.showPetsForm" 
+        (petAdded)="addPet(i, $event)">
+      </app-pet-form>
+      
+    </li>
+  </ul>
+</div>
