@@ -5,7 +5,7 @@ import { Person, Pet } from '../models/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  private people: Person[] = []; // Inicializa como un array vacío
+  private people: Person[] = []; 
 
   getPeople(): Person[] {
     return [...this.people];
@@ -26,7 +26,7 @@ export class PersonService {
     const index = this.people.findIndex(p => p.id === updatedPerson.id);
     if (index !== -1) {
       this.people[index] = updatedPerson;
-      // Si estás usando una base de datos o algún almacenamiento externo, también deberías actualizar ahí
+      
     }
   }
   

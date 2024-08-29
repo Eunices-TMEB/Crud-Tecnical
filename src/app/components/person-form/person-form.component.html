@@ -17,12 +17,12 @@
     <label for="email">Correo</label>
     <input name="email" [(ngModel)]="person.email" (ngModelChange)="onFormChange()" placeholder="Correo" required>
 
-    <!-- Mostrar mensaje de error si el correo electrónico no es válido -->
+ 
     <div *ngIf="emailError" class="error-message">
       {{ emailError }}
     </div>
 
-    <!-- Deshabilitar el botón de envío si el formulario no es válido -->
+    
     <button type="submit" [disabled]="!isFormValid">{{ isEditing ? 'Actualizar Persona' : 'Registrar Persona' }}</button>
   </form>
 </div>

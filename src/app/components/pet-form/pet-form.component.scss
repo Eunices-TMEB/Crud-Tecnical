@@ -75,11 +75,11 @@ $font-stack: 'Roboto', sans-serif;
 
 label {
   font-family: Arial, sans-serif;
-  font-size: 10px; /* Tamaño de fuente reducido a 10px */
+  font-size: 10px;
   color: #333;
   margin-bottom: 5px;
   display: block;
-  text-transform: uppercase; /* Opción para texto en mayúsculas (opcional) */
+  text-transform: uppercase;
 }
 
 input,
@@ -96,14 +96,14 @@ textarea {
 
 form {
   display: flex;
-  flex-direction: column; /* Asegura que los labels e inputs estén en columna */
-  align-items: flex-start; /* Alinea los elementos al inicio */
-  margin-bottom: 20px; /* Espacio entre el formulario y otros elementos */
+  flex-direction: column; 
+  align-items: flex-start; 
+  margin-bottom: 20px;
 }
 
-/* Estilo para los labels con campos obligatorios */
+
 label[for]:before {
-  content: "* "; /* Asterisco rojo al principio */
+  content: "* ";
   color: red;
 }
 
